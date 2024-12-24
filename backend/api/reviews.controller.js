@@ -5,8 +5,10 @@ import e from "express"
 
 export default class ReviewsController {
     static async apiPostReview(req, res, next) {
+
+        console.log("In apiPostRevie");
         try {
-            const movieId = req.body.movieId
+            const movieId = parseInt(req.body.movieId)
             const review = req.body.review
             const user = req.body.user
 
@@ -66,6 +68,8 @@ export default class ReviewsController {
     }
 
     static async apiDeleteReview(req, res, next) {
+        console.log("apiDeleteReview: ", req);
+
         try {
             const reviewId = req.params.id
             const reviewResponse = await ReviewsDAO.deleteReview(reviewId)

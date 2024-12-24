@@ -29,7 +29,7 @@ function returnMovies(url) {
             const title = document.createElement('h3');
             title.setAttribute('id', 'title');
            
-            title.innerHTML = `${element.title}`;
+            title.innerHTML = `${element.title}<br><a href="movie.html?id=${element.id}&title=${element.title}">reviews</a>`;
             image.src = IMG_PATH + element.poster_path;
 
             div_card.appendChild(image);
